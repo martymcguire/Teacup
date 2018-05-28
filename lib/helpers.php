@@ -1,8 +1,7 @@
 <?php
 
-ORM::configure('mysql:host=' . Config::$dbHost . ';dbname=' . Config::$dbName);
-ORM::configure('username', Config::$dbUsername);
-ORM::configure('password', Config::$dbPassword);
+$dbStr = 'sqlite:' . __DIR__ . '/../' . Config::$dbName . '.db';
+ORM::configure($dbStr);
 
 function render($page, $data) {
   global $app;
