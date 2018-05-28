@@ -13,8 +13,6 @@
           <li><a href="/add-to-home?start">Add to Home Screen</a></li>
           <li><a href="/settings"><?= preg_replace(['/https?:\/\//','/\/$/'],'',session('me')) ?></a></li>
           <li><a href="/signout">Sign Out</a></li>
-        <? } else if(property_exists($this, 'authorizing')) { ?>
-          <li class="navbar-text"><?= htmlspecialchars($this->authorizing) ?></li>
         <? } else { ?>
           <form action="/auth/start" method="get" class="navbar-form">
             <input type="text" name="me" placeholder="yourdomain.com" class="form-control" />
