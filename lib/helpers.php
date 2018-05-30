@@ -358,6 +358,7 @@ function default_food_options() {
 }
 
 function query_user_nearby_options($type, $user_id, $latitude, $longitude) {
+  return []; /* FIXME: need a gc_distance equivalent for SQLite3 */
   $published = date('Y-m-d H:i:s', strtotime('-4 months'));
   $options = [];
   $bin_size = 1000;
